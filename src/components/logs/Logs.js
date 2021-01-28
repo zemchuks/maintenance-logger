@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import LogItem from './LogItem'
 import Preloader from '../layout/Preloader'
+import { logs } from '../../redux/ActionCreators'
 
-const Logs = () => {
+const Logs = ({ log }) => {
     const [logs, setLogs] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -32,4 +34,12 @@ const Logs = () => {
         </ul>
     )
 }
-export default Logs
+
+const mapStateToProps = state => {
+    return {
+      log: state.log
+    }
+  }
+  
+
+export default connect(mapStateToProps)(Logs)

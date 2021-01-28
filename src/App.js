@@ -7,14 +7,14 @@ import EditLogModal from './components/logs/EditLogModal'
 import AddTechModal from './components/Techs/AddTechModal'
 import TechListModal from './components/Techs/TechListModal'
 import { Provider } from 'react-redux'
-import store from './store'
+import { ConfigureStore } from './redux/store'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import 'material-design-icons/iconfont/material-icons.css'
 import './App.css';
 
-
+const store = ConfigureStore()
 const App = () => {
   useEffect(() => {
     // Init Materialize JS
