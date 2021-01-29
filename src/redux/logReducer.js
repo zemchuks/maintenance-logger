@@ -7,13 +7,41 @@ const initialState = {
     error: null
 }
 
-export default (state = initialState, action) => {
+export const logs = (state = initialState, action) => {
     switch(action.type) {
         case types.GET_LOGS:
             return {
                 ...state,
                 logs: action.payload,
                 loading: false
+            }
+        case types.ADD_LOG:
+            return {
+                ...state,
+                logs: [action.payload, ...state.logs],
+                loading: false
+            }
+        case types.DELETE_LOG:
+            return {
+                ...state,
+                logs: state.logs.filter(log => log.id !== action.payload),
+                loading: false
+            }
+        case types.UPDATE_LOG:
+            return {
+                ...state,
+                logs: state.logs.map(log => log.id === action.payload.id ? action.payload : log),
+                loading: false
+            }
+        case types.SET_CURRENT:
+            return {
+                ...state,
+                current: action.payload
+            }
+        case types.CLEAR_CURRENT:
+            return {
+                ...state,
+                current: null
             }
         case types.SET_LOADING:
             return {
