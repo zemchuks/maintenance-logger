@@ -1,31 +1,24 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed  server on work station 002",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2021-01-29T18:27:15.267Z"
-    },
-    {
-      "message": "check local server 009",
+      "message": "log sercver cache",
       "attention": false,
       "tech": "Sam Smith",
-      "date": "2021-01-29T17:46:11.062Z",
+      "date": "2021-01-30T13:21:54.952Z",
       "id": 2
     },
     {
-      "message": "service routers",
-      "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2021-01-29T17:46:42.148Z",
+      "message": "change network card in server #008",
+      "attention": true,
+      "tech": "Sam Smith",
+      "date": "2021-01-30T13:28:55.009Z",
       "id": 3
     },
     {
-      "message": "change router password",
+      "message": "fix hard drive on workstation 002",
       "attention": false,
-      "tech": "Sam Smith",
-      "date": "2021-01-29T17:47:37.935Z",
+      "tech": "Sara Wilson",
+      "date": "2021-01-30T13:30:03.259Z",
       "id": 4
     }
   ],

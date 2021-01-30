@@ -15,6 +15,7 @@ import 'material-design-icons/iconfont/material-icons.css'
 import './App.css';
 
 const store = ConfigureStore()
+
 const App = () => {
   useEffect(() => {
     // Init Materialize JS
@@ -35,7 +36,7 @@ const App = () => {
         </div>
       </Fragment>
     </Provider>
-  );
+  )
 }
 
 export default App;

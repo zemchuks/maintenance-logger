@@ -17,7 +17,7 @@ export const getLogs = () => async (dispatch) => {
     } catch (err) {
         dispatch({
             type: types.LOGS_ERROR,
-            payload: err.response.data
+            payload: err.response.statusText
         })
     }
 }
@@ -43,7 +43,7 @@ export const addLog = (log) => async (dispatch) => {
     } catch (err) {
         dispatch({
             type: types.LOGS_ERROR,
-            payload: err.response.data
+            payload: err.response.statusText
         })
     }
 }
@@ -63,7 +63,7 @@ export const deleteLog = (id) => async dispatch => {
     } catch (err) {
         dispatch({
             type: types.LOGS_ERROR,
-            payload: err.response
+            payload: err.response.statusText
         })
     }
 }
@@ -88,7 +88,7 @@ export const updateLog = (log) => async dispatch => {
     } catch (err) {
         dispatch({
             type: types.LOGS_ERROR,
-            payload: err.response
+            payload: err.response.statusText
         })
     }
 }
@@ -108,7 +108,7 @@ export const updateLog = (log) => async dispatch => {
        } catch (err) {
         dispatch({
             type: types.LOGS_ERROR,
-            payload: err.response
+            payload: err.response.statusText
         })
        }
     }
@@ -131,5 +131,30 @@ export const clearCurrent = () => {
 export const setLoading = () => {
     return {
         type: types.SET_LOADING
+    }
+}
+
+
+/**
+ *      Tech Actions
+ */
+
+ // GET TECHS
+ export const getTechs = () => async (dispatch) => {
+    try {
+        setLoading()
+
+        const res = await fetch('/techs')
+        const data = await res.json()
+
+        dispatch({
+            type: types.GET_TECHS,
+            payload: data
+        })
+    } catch (err) {
+        dispatch({
+            type: types.TECHS_ERROR,
+            payload: err.response.statusText
+        })
     }
 }
