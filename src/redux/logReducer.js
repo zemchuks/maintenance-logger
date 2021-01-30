@@ -33,6 +33,11 @@ export const logs = (state = initialState, action) => {
                 logs: state.logs.map(log => log.id === action.payload.id ? action.payload : log),
                 loading: false
             }
+        case types.SEARCH_LOGS:
+            return {
+                ...state,
+                logs: action.payload
+            }
         case types.SET_CURRENT:
             return {
                 ...state,

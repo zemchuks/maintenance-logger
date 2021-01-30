@@ -1,6 +1,7 @@
 import * as types from './types'
 
 // Logs Actions *****************
+
 // Get Logs from Server
 export const getLogs = () => async (dispatch) => {
     try {
@@ -21,7 +22,7 @@ export const getLogs = () => async (dispatch) => {
     }
 }
 
-// Add LOG
+// Add LOG to server
 export const addLog = (log) => async (dispatch) => {
     try {
         setLoading()
@@ -47,7 +48,7 @@ export const addLog = (log) => async (dispatch) => {
     }
 }
 
-// Delete LOG
+// Delete LOG on server
 export const deleteLog = (id) => async dispatch => {
     try {
         setLoading()
@@ -92,11 +93,31 @@ export const updateLog = (log) => async dispatch => {
     }
 }
 
-  // Set Current Log
-  export const setCurrent = log => {
-    return {
-        type: types.SET_CURRENT, payload: log
+// search throug logs
+ export const searchLogs = text => async dispatch => {
+       try {
+           setLoading()
+
+           const res = await fetch(`/logs/?q=${text}`)
+           const data = await res.json()
+
+        dispatch({ 
+            type: types.SEARCH_LOGS, 
+            payload: data 
+        })
+       } catch (err) {
+        dispatch({
+            type: types.LOGS_ERROR,
+            payload: err.response
+        })
+       }
     }
+
+  // Set Current Log
+export const setCurrent = log => {
+return {
+    type: types.SET_CURRENT, payload: log
+}
 }
 
 // Clear Current Log
