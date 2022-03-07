@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { updateLog } from '../../redux/ActionCreators'
-import TechSelectOption from '../Techs/techSelectOptions'
+import TechSelectOptions from '../Techs/TechSelectOptions'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
 const EditLogModal = ({ current, updateLog }) => {
@@ -55,7 +55,7 @@ const EditLogModal = ({ current, updateLog }) => {
                     <div className="input-field">
                         <select name='tech' value={tech} className='browser-default' onChange={e => setTech(e.target.value)}>
                         <option value="" disabled>Select Technician</option>
-                        <TechSelectOption />
+                        <TechSelectOptions />
                         </select>
                     </div>
                 </div>

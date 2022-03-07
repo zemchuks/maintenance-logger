@@ -1,25 +1,11 @@
 {
   "logs": [
     {
-      "message": "log sercver cache",
-      "attention": false,
-      "tech": "Sam Smith",
-      "date": "2021-01-30T13:21:54.952Z",
-      "id": 2
-    },
-    {
-      "message": "change network card in server #008",
+      "id": 1,
+      "message": "i neeed a nnew machine",
       "attention": true,
-      "tech": "Sam Smith",
-      "date": "2021-01-30T13:28:55.009Z",
-      "id": 3
-    },
-    {
-      "message": "fix hard drive on workstation 002",
-      "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2021-01-30T13:30:03.259Z",
-      "id": 4
+      "tech": "Bruno Ezemba",
+      "date": "2022-03-01T10:48:38.942Z"
     }
   ],
   "techs": [
@@ -37,6 +23,11 @@
       "id": 3,
       "firstName": "Sara",
       "lastName": "Wilson"
+    },
+    {
+      "firstName": "Bruno",
+      "lastName": "Ezemba",
+      "id": 4
     }
   ]
 }

@@ -18,7 +18,7 @@ export const logs = (state = initialState, action) => {
         case types.ADD_LOG:
             return {
                 ...state,
-                logs: [action.payload, ...state.logs],
+                logs: [...state.logs, action.payload],
                 loading: false
             }
         case types.DELETE_LOG:
